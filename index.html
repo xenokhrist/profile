@@ -486,10 +486,25 @@
                 left: 4px;
             }
         }
+
+        #particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.header .container, .hero {
+    position: relative;
+    z-index: 1;
+}
     </style>
 </head>
 <body>
     <header class="header">
+        <div id="particles-js"></div>
         <div class="container">
             <div class="hero">
                 <div class="profile-img">
@@ -828,6 +843,40 @@
         if (metricsSection) {
             observer.observe(metricsSection);
         }
+        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+        window.addEventListener('load', function() {
+            if (window.particlesJS) {
+              particlesJS("particles-js", {
+                "particles": {
+                  "number": { "value": 70 },
+                  "color": { "value": "#ffffff" },
+                  "shape": { "type": "circle" },
+                  "opacity": { "value": 0.6 },
+                  "size": { "value": 3 },
+                  "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                  },
+                  "move": { "enable": true, "speed": 2 }
+                },
+                "interactivity": {
+                  "detect_on": "canvas",
+                  "events": {
+                    "onhover": { "enable": true, "mode": "grab" },
+                    "resize": true
+                  },
+                  "modes": {
+                    "grab": { "distance": 140, "line_linked": { "opacity": 0.6 } }
+                  }
+                },
+                "retina_detect": true
+              });
+            }
+          });
     </script>
 </body>
 </html>
