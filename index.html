@@ -845,38 +845,44 @@
         }
         <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
-        window.addEventListener('load', function() {
-            if (window.particlesJS) {
-              particlesJS("particles-js", {
-                "particles": {
-                  "number": { "value": 70 },
-                  "color": { "value": "#ffffff" },
-                  "shape": { "type": "circle" },
-                  "opacity": { "value": 0.6 },
-                  "size": { "value": 3 },
-                  "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.4,
-                    "width": 1
+        <script>
+            window.addEventListener('load', function() {
+              if (window.particlesJS) {
+                particlesJS("particles-js", {
+                  "particles": {
+                    "number": { "value": 120, "density": { "enable": true, "value_area": 800 } },
+                    "color": { "value": "#00ffff" },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.4 },
+                    "size": { "value": 2 },
+                    "line_linked": {
+                      "enable": true,
+                      "distance": 120,
+                      "color": "#00ffff",
+                      "opacity": 0.3,
+                      "width": 1
+                    },
+                    "move": {
+                      "enable": true,
+                      "speed": 0.8,
+                      "direction": "none",
+                      "out_mode": "out"
+                    }
                   },
-                  "move": { "enable": true, "speed": 2 }
-                },
-                "interactivity": {
-                  "detect_on": "canvas",
-                  "events": {
-                    "onhover": { "enable": true, "mode": "grab" },
-                    "resize": true
+                  "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                      "onhover": { "enable": true, "mode": "repulse" },
+                      "resize": true
+                    },
+                    "modes": {
+                      "repulse": { "distance": 100, "duration": 0.4 }
+                    }
                   },
-                  "modes": {
-                    "grab": { "distance": 140, "line_linked": { "opacity": 0.6 } }
-                  }
-                },
-                "retina_detect": true
-              });
-            }
-          });
-    </script>
+                  "retina_detect": true
+                });
+              }
+            });
+            </script>
 </body>
 </html>
